@@ -28,16 +28,16 @@ void searchForCommonItems(int *array1, int *array2, int size1, int size2) {
 		size2 = tempSize;
 		array2 = tempArray;
 	}
-
+	int countCommonItems=0;
 	for (int i = 0; i < size1; i++) {
 		for (int j = 0; j < size2; j++) {
 			if (array1[i] == array2[j]) {
-				cout << array1[i] << " ";
+				countCommonItems++;
 				break;
 			}
 		}
 	}
-	cout << endl;
+	cout <<"Кол-во общих эл = "<<countCommonItems<<endl;
 }
 
 void main() {
@@ -52,7 +52,6 @@ void main() {
 	randomArray(sizeA, array1);
 	cout << "Массив 2: ";
 	randomArray(sizeB, array2);
-	cout << "Общие элементы : ";
 	searchForCommonItems(array1, array2, sizeA, sizeB);
 	system("pause");
 }
